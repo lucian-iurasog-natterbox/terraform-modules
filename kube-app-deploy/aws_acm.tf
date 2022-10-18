@@ -1,6 +1,6 @@
 module "acm" {
   for_each    = try(local.dns_env, {})
-  source      = "git::ssh://git@github.com/lucian-iurasog-natterbox/terraform-modules.git//acm?ref=acm_0.0.1"
+  source      = "git::https://github.com/lucian-iurasog-natterbox/terraform-modules.git//acm?ref=acm_0.0.1"
   domain_name = "${var.name}.${each.value}"
 }
 
